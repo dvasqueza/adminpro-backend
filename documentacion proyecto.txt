@@ -1,0 +1,29 @@
+//CREAR el proyecto
+npm init -y
+
+//instalar express
+npm install express
+
+//comando para ejecutar archivos .js
+npm nombreArchivo.js
+
+//instalacion de nodemon para que refresque los cambios al guardar y no tener que bajar y subir el proyecto cada cambios
+//abrir la cmd como admin y correr
+npm install -g nodemon
+
+//para correr el proyecto ejecutar
+nodemon nombreArchivo.js
+
+//luego configurar en el package.json el script para levantar la aplicacion
+//y despues el proyecto se levantaría asi:
+npm run start:dev
+
+
+//mongoose orm para la base de datos 
+npm install mongoose
+
+//para manejar variables de entorno
+npm install dotenv
+
+//npm cors para manejar peticiones con cruce de dominio
+npm install cors
