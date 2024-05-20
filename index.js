@@ -12,23 +12,21 @@ const app = express();
 //premitir CORS
 app.use(cors());
 
+//lectura y parseo de body requests
+app.use( express.json() );
+
 //Base de datos
 dbConection();
 
-//Rutas
-app.get('/', (req, res)=>{
-    res
-    .status(202)
-    .json({
-        ok: true,
-        msj: 'Hi there'
-    });
-}
-)
+//paara redirigir a la ruta donde se ejecutará el servicio
+app.use('/api/users', require('./routes/users')); 
+app.use('/api/login', require('./routes/auth') )
+
+
 
 //inicializar servidor
 app.listen(process.env.PORT, ()=>{
 
-    console.log("Hi there Dave from port" + process.env.PORT);
+    console.log("Hi there Dave from port: " + process.env.PORT);
 });
 

@@ -27,3 +27,12 @@ npm install dotenv
 
 //npm cors para manejar peticiones con cruce de dominio
 npm install cors
+
+//para validar modelos y campos obligatorios ejecutar
+npm install express-validator
+
+//para encriptar  passwords
+npm install bcryptjs
+
+//JWT
+Jason WebToken
