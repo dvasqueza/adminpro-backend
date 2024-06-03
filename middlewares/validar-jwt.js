@@ -13,7 +13,7 @@ const validarJWT = (req, res = response, next) => {
 
     try {
         const { uid } = jwt.verify(token, process.env.JWT_SECRET);
-        req.uid = uid;
+        req.uid = uid; //se setea el id del usuario para que viaje en las req despues de validar el token.
         console.log(uid);
     } catch (error) {
         return res.status(401).json({

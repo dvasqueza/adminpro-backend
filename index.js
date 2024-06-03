@@ -20,7 +20,11 @@ dbConection();
 
 //paara redirigir a la ruta donde se ejecutará el servicio
 app.use('/api/users', require('./routes/users')); 
-app.use('/api/login', require('./routes/auth') )
+app.use('/api/login', require('./routes/auth') );
+app.use('/api/hospital', require('./routes/hospital') );
+app.use('/api/medicos', require('./routes/medicos') );
+app.use('/api/todo', require('./routes/busquedas'));
+app.use('/api/upload', require('./routes/upload'));
 
 
 
