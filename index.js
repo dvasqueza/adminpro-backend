@@ -12,6 +12,9 @@ const app = express();
 //premitir CORS
 app.use(cors());
 
+//exponer carpete publica para que se despliegue en el server
+app.use(express.static('public'));
+
 //lectura y parseo de body requests
 app.use( express.json() );
 

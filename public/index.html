@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign In Test</title>
+</head>
+<body>
+    <h3>Hello Dave here is your OAuth ponete cabra</h3>
+
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script>
+        var url = "http://localhost:3005/api/login/google"
+      function handleCredentialResponse(response) {
+        // console.log("Encoded JWT ID token: " + response.credential);
+
+        //LLamo al post de mi backend para enviar el Token de Google
+        fetch( url, {
+            method: 'POST',
+            headers:{ 'Content-Type': 'application/json'},
+            body: JSON.stringify( { token: response.credential } )
+        })
+        .then( resp => resp.json() )
+        .then( data => console.log(' Nuestro server ', data) )
+        .catch( console.log )
+
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "485727566185-va0b9f8nq4sd6b073c3cdat9m18hvoi8.apps.googleusercontent.com",
+          callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          { theme: "outline", size: "large" }  // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      }
+    </script>
+</body>
+</html>

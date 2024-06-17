@@ -41,3 +41,14 @@ Jason WebToken
 npm i express-fileupload
 
 // para generar uuid unicos para guardar nombres de los archivos a guardar    npm i uuid
+
+//para implementar Authenticación con Google
+ir a: https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid?hl=es-419
+1) Abre la página Credenciales de la Consola de APIs de Google. https://console.developers.google.com/apis?hl=es-419
+ y ahi en esos enlaces están todas las instrucciones.
+ se crea el consentin¿miento del usuario y luego se crea el id del oAuth
+ se pone en las direcciones urls permitidas http://localhost y http://localhost:3005 con el puerto
+ Luego de crear esto ir al apartado Muestra el botón Acceder con Google para poner el codigo que muestra el boton por js
+ configurar en el callback que llame a nuestra api de auth por google.
+ Luego ya se obtiene el token de google y luego ir a "verificar el token id de google desde el servidor" e instalar la libreria de node
+ npm install google-auth-library --save
